@@ -17,3 +17,77 @@
 
 
 </section>
+
+
+<!--Parte 2-->
+<section>
+  <hr class="my-2">
+  <button
+  #btnInteraciont
+  class="p-2 bg-blue-500 hover:bg-blue-700 transition-all rounded text-white my-2">
+    Click me
+  </button>
+
+
+  <!--Pasa de amarillo a verde  cuando hago click en el boton-->
+  @defer (on interaction(btnInteraciont)) {
+    <app-heavy-loaders-fast cssClass="bg-amber-300 h-20">
+      <span>On iteraccion</span>
+    </app-heavy-loaders-fast>
+  }@placeholder {
+    <div class="w-full h-20 bg-yellow-100">
+      Cuando hagamos click sobre el boton
+    </div>
+  }
+
+
+  </section>
+
+  <!--Parte 3-->
+<section>
+  <hr class="my-2">
+
+  <!--Pasa de amarillo a verde  cuando pasamos el raton por el boton-->
+  @defer (on hover(btnInteraciont)) {
+    <app-heavy-loaders-fast cssClass="bg-green-200 h-20">
+      <span>On Hover</span>
+    </app-heavy-loaders-fast>
+  }@placeholder {
+    <div class="w-full h-20 bg-yellow-100">
+      Cuando pasemos el puntero del raton sobre el boton
+    </div>
+  }
+  </section>
+
+
+    <!--Parte 4-->
+<section>
+  <hr class="my-2">
+
+  <!--Pasa de amarillo a verde  cuando pasamos el raton por el boton-->
+  @defer (on immediate) {
+    <app-heavy-loaders-fast cssClass="bg-red-200 h-20">
+      <span>On immediate</span>
+    </app-heavy-loaders-fast>
+  }@placeholder {
+    <div class="w-full h-20 bg-yellow-100">
+      En cuanto pueda
+    </div>
+  }
+  </section>
+
+      <!--Parte 5-->
+<section>
+  <hr class="my-2">
+
+  <!--Pasa de amarillo a verde  cuando pasamos el raton por el boton-->
+  @defer (on timer(2000)) {
+    <app-heavy-loaders-fast cssClass="bg-stone-300 h-20">
+      <span>On Timer</span>
+    </app-heavy-loaders-fast>
+  }@placeholder {
+    <div class="w-full h-20 bg-yellow-100">
+      Esperamos 2 segundos
+    </div>
+  }
+  </section>
